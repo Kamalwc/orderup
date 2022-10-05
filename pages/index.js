@@ -11,6 +11,7 @@ export default function Home() {
   const landscapeSrc = "https://firebasestorage.googleapis.com/v0/b/order-up-7e776.appspot.com/o/landscape.jpg?alt=media&token=2eda5697-a633-4dd5-9fde-18a39da5d8f0",
         portraitSrc = "https://firebasestorage.googleapis.com/v0/b/order-up-7e776.appspot.com/o/eiliv-aceron-mAQZ3X_8_l0-unsplash.jpg?alt=media&token=b611b619-5f09-4e46-ba07-9c1cd650e09e" 
 
+        //TODO APPLY themes more and less custom styling
   return (
     <div className={styles.container}>
 
