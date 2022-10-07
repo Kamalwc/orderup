@@ -1,10 +1,11 @@
 import {Card,  Button, Box, CardContent, CardHeader, CardMedia, Collapse, MenuItem, Grid, Typography } from '@mui/material'
 import React from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
 
 export default function Item(props){
-    const {title, items, handleExpandDescription, handleCartItem} = props;
+    const {title, items, handleExpandDescription, handleAddItemToCart} = props;
 
 
 
@@ -20,7 +21,7 @@ export default function Item(props){
                         <Card>
                             <CardHeader
                                 title={`${item.name}`}
-                                subheader={`Price: ${item.price}`}
+                                subheader={`Price: $${item.price}`}
                             />
                             <CardMedia
                                 image={item.image}
@@ -32,9 +33,18 @@ export default function Item(props){
                                     <Collapse in={item.expanded} timeout="auto" unmountOnExit>
                                         <Typography>{item.description}</Typography>
                                     </Collapse>
-                                    <ExpandMoreIcon onClick={() => handleExpandDescription(key, title)}/>
-
-                                    <Button variant='contained' fullWidth onClick={() =>handleCartItem(item)}>Cart ME </Button>
+                                    
+                                        {
+                                            item.expanded && <ExpandLessIcon onClick={() => handleExpandDescription(key, title)}/>
+                                        }
+                                        {
+                                            !item.expanded && 
+                                            <Box display="flex">
+                                                <Typography>description</Typography>
+                                                <ExpandMoreIcon onClick={() => handleExpandDescription(key, title)}/>
+                                            </Box>
+                                        }
+                                    <Button variant='contained' fullWidth onClick={() =>handleAddItemToCart(item)}>Cart ME </Button>
                                 </Box>
                             </CardContent>
                         </Card>

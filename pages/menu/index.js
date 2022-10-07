@@ -1,30 +1,30 @@
-import { AppBar, IconButton, Typography } from '@mui/material'
+import { AppBar, IconButton, Typography, Button, Badge } from '@mui/material'
 import React, {useEffect, useState} from 'react'
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Item from './Item';
+import Link from 'next/link';
+
 import cloneDeep  from 'lodash/cloneDeep';
 
-export default function Menu(){
+export default function Menu({handleAddItemToCart, cart}){
 
     const [items, setItems] = useState({
         weekly: fakeItems.filter(x => x.group === 'weekly'),
         latin: fakeItems.filter(x => x.group === 'latin'),
-        sandWhiches: fakeItems.filter(x => x.group === 'sandWhiches'),
+        sandWhiches: fakeItems.filter(x => x.group === 'sandwhiches'),
         vegan: fakeItems.filter(x => x.group === 'vegan')
     })
 
     const [loading, setLoading] = useState(false)
 
-
-
     const handleExpandDescription = (i,group) =>{
-        const copyItems = cloneDeep(items)
+        const copyItems = cloneDeep(items);
         const copyObj = cloneDeep(items[group][i])
         copyObj.expanded = !copyObj.expanded
         const copyArr = cloneDeep(items[group])
-        copyArr.splice(i,1,copyObj)
+        copyArr.splice(i, 1, copyObj)
 
         copyItems[group] = copyArr
         
@@ -44,34 +44,40 @@ export default function Menu(){
                         <Toolbar >
                         <MenuIcon /> {/*  // logo here */}
 
-                        <IconButton href={"/checkout"} style={{marginLeft: 'auto', color: "#fff"}}>
-                            <ShoppingCartCheckoutIcon
-                                
-                            />
-                        </IconButton>
+                        <Link href={"/checkout"}>
+                            <IconButton style={{marginLeft: 'auto', color: "#fff"}}>
+                                <Badge color="error" badgeContent={cart.length > 0 ? cart.length : null}>
+                                    <ShoppingCartCheckoutIcon/>  
+                                </Badge>
+                            </IconButton>
+                        </Link>
                         
                         </Toolbar>
                     </AppBar>
                     <div style={{margin: '0% 10%'}}> 
                         <Item
-                            title="weekly"
+                            title="Weekly Special"
                             items={items.weekly}
                             handleExpandDescription={handleExpandDescription}
+                            handleAddItemToCart={handleAddItemToCart}
                         /> 
                         <Item
-                            title="latin"
+                            title="Latin"
                             items={items.latin}
                             handleExpandDescription={handleExpandDescription}
+                            handleAddItemToCart={handleAddItemToCart}
                         />
                         <Item
-                            title="vegan"
+                            title="Vegan"
                             items={items.vegan}
                             handleExpandDescription={handleExpandDescription}
+                            handleAddItemToCart={handleAddItemToCart}
                         />
                         <Item
-                            title="sandwhiches"
+                            title="Sandwhiches"
                             items={items.sandWhiches}
                             handleExpandDescription={handleExpandDescription}
+                            handleAddItemToCart={handleAddItemToCart}
                         /> 
                     </div>
                 </>
