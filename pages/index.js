@@ -33,9 +33,9 @@ export default function Menu({handleAddItemToCart, cart}){
     return(
         <div>
             <Head>
-                <title>Sis. Dina's kitchen </title>
+                <title>Sis. Dina&apos;s kitchen </title>
                 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Playball&display=swap" rel="stylesheet"/>
             </Head>
             {
@@ -54,7 +54,7 @@ export default function Menu({handleAddItemToCart, cart}){
                     
                     <div style={{margin: '0% 10%'}}> 
                     <Box sx={{ display: 'flex', justifyContent:'center' }}>
-                         <Typography className={styles.menuHeader} variant='h1'>Sis. Dina's Kitchen</Typography>
+                         <Typography className={styles.menuHeader} variant='h1'>Sis. Dina&apos;s Kitchen</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent:'center' }}>
                          <Typography className={styles.call} variant='h6'>Call: ( 973 ) 123 - 4567</Typography>
