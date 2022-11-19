@@ -6,9 +6,15 @@ import emptycart from '../../public/emptycart.svg'
 import { SignalCellularNullOutlined } from '@mui/icons-material';
 import emailjs from '@emailjs/browser';
 
+//CHECKOUT PAGE
+
+ /*
+ *** email / text orders until delivery service established.
+ email API
+ https://www.emailjs.com/docs/examples/reactjs/
+ https://dashboard.emailjs.com/admin */
 export default function Checkout({handRemoveItemFromCart, cart}){
-    //https://www.emailjs.com/docs/examples/reactjs/
-    //https://dashboard.emailjs.com/admin
+   
 
     const [form, setForm ] = useState({
         firstName: '',
@@ -25,10 +31,10 @@ export default function Checkout({handRemoveItemFromCart, cart}){
     const handleSendEmail = () =>{
         emailjs.sendForm('service_uqm8ojt', 'template_zjxum5l', form.current, 'qO3SWbUivUFFtUHoB')
       .then((result) => {
-            //set success  state/ page here
+        //TODO set success  state/ page here
           console.log(result.text);
       }, (error) => {
-        //error snackbar
+        //TODO error snackbar
           console.log(error);
       });
     }
@@ -42,15 +48,14 @@ export default function Checkout({handRemoveItemFromCart, cart}){
             </NavBar>
 
             {
-                // todo fix ....
-                // cart.length === 0 &&
-                // <SvgIcon component={emptycart}/>
+                cart.length === 0 &&
+                <SvgIcon component={emptycart}/>
 
             }
 
             {
                 
-                // cart.length > 0 &&
+                cart.length > 0 &&
                 <Grid container style={{paddingLeft: '10%',paddingRight: '10%'}}>
                     {/* Checkout Form  */}
                     <Grid item xs={12} md={6}>
@@ -105,10 +110,8 @@ export default function Checkout({handRemoveItemFromCart, cart}){
                     </Grid>
                     {/* CHeckout items */}
                     <Grid item xs={12} md={6}>
-                        {/* todo make this section scroll without the form */}
                         {
-                            // cart.map(item =>{
-                            [1,2].map(item =>{   
+                            cart.map(item =>{
                                 return(
                                     <Paper sx={{ p: 3 , m: 3}}>
                                         <Typography>"{item.name}"</Typography>

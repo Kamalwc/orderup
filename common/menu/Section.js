@@ -29,7 +29,7 @@ export default function Section(props){
                                     lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum
                                 </Typography>
                             </Box>
-                            {/* TODO uncomment when cart feature enabled */}
+                            {/* TODO uncomment when implementing cart feature */}
                             {/* <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                                 <Button variant='contained'  onClick={() =>handleAddItemToCart(item)}>Cart ME </Button>
                             </Box> */}

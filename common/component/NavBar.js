@@ -1,11 +1,8 @@
-import { AppBar, IconButton, Typography, Button, Badge } from '@mui/material'
-import React, {useEffect, useState} from 'react'
-import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import { AppBar, IconButton} from '@mui/material'
+import React from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Link from 'next/link';
-
-
 
 
 export default function NavBar(props){
