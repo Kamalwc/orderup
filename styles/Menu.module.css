@@ -1,0 +1,24 @@
+.menuHeader{
+    color: #000;
+    font-family: 'Playball', cursive;
+}
+
+.call{
+    color: #000;
+}
+
+.sectionHeader{
+    color: #000;
+    font-family: 'Playball', cursive;
+    padding: 15px;
+}
+
+.itemName{
+    color: #000;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.itemDescription{
+    color: #000;
+    font-family: 'Libre Baskerville', serif;
+}

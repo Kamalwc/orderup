@@ -1,12 +1,15 @@
-import { AppBar, IconButton, Typography, Button, Badge } from '@mui/material'
+import { AppBar, IconButton, Typography, Button, Badge, Box } from '@mui/material'
 import React, {useEffect, useState} from 'react'
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Item from './Item';
+import Section from './Section';
 import Link from 'next/link';
+import Head from 'next/head';
+import styles from '../../styles/Menu.module.css'
 
 import cloneDeep  from 'lodash/cloneDeep';
+import NavBar from '../common/component/NavBar';
 
 export default function Menu({handleAddItemToCart, cart}){
 
@@ -31,8 +34,15 @@ export default function Menu({handleAddItemToCart, cart}){
         setItems(copyItems)
     }
 
+    
     return(
         <div>
+            <Head>
+                <title>Sis. Dina's kitchen </title>
+                <link rel="preconnect" href="https://fonts.googleapis.com"/>
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+                <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Playball&display=swap" rel="stylesheet"/>
+            </Head>
             {
                 loading && <Typography>Loading ....</Typography>
             }
@@ -40,40 +50,39 @@ export default function Menu({handleAddItemToCart, cart}){
             {
                 !loading && 
                 <>
-                    <AppBar position="static">
-                        <Toolbar >
-                        <MenuIcon /> {/*  // logo here */}
-
-                        <Link href={"/checkout"}>
-                            <IconButton style={{marginLeft: 'auto', color: "#fff"}}>
-                                <Badge color="error" badgeContent={cart.length > 0 ? cart.length : null}>
-                                    <ShoppingCartCheckoutIcon/>  
-                                </Badge>
-                            </IconButton>
-                        </Link>
-                        
-                        </Toolbar>
-                    </AppBar>
+                    {/* TODO uncomment when cart feature enabled */}
+                    {/* <NavBar navPath={"/checkout"}>
+                        <Badge color="error" badgeContent={cart.length > 0 ? cart.length : null}>
+                                <ShoppingCartCheckoutIcon/>  
+                        </Badge>
+                    </NavBar> */}
+                    
                     <div style={{margin: '0% 10%'}}> 
-                        <Item
+                    <Box sx={{ display: 'flex', justifyContent:'center' }}>
+                         <Typography className={styles.menuHeader} variant='h1'>Sis. Dina's Kitchen</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent:'center' }}>
+                         <Typography className={styles.call} variant='h6'>Call: ( 973 ) 123 - 4567</Typography>
+                    </Box>
+                        <Section
                             title="Weekly Special"
                             items={items.weekly}
                             handleExpandDescription={handleExpandDescription}
                             handleAddItemToCart={handleAddItemToCart}
                         /> 
-                        <Item
+                        <Section
                             title="Latin"
                             items={items.latin}
                             handleExpandDescription={handleExpandDescription}
                             handleAddItemToCart={handleAddItemToCart}
                         />
-                        <Item
+                        <Section
                             title="Vegan"
                             items={items.vegan}
                             handleExpandDescription={handleExpandDescription}
                             handleAddItemToCart={handleAddItemToCart}
                         />
-                        <Item
+                        <Section
                             title="Sandwhiches"
                             items={items.sandWhiches}
                             handleExpandDescription={handleExpandDescription}
