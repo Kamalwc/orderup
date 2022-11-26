@@ -4,7 +4,6 @@ import Section from '../common/menu/Section';
 import Head from 'next/head';
 import styles from '../styles/Menu.module.css'
 import cloneDeep  from 'lodash/cloneDeep';
-// import NavBar from '../common/component/NavBar';
 
 export default function Menu({handleAddItemToCart, cart}){
 
@@ -31,12 +30,9 @@ export default function Menu({handleAddItemToCart, cart}){
 
     
     return(
-        <div>
+        <div className={styles.background}>
             <Head>
                 <title>Sis. Dina&apos;s kitchen </title>
-                <link rel="preconnect" href="https://fonts.googleapis.com"/>
-                <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Playball&display=swap" rel="stylesheet"/>
             </Head>
             {
                 loading && <Typography>Loading ....</Typography>
@@ -57,9 +53,10 @@ export default function Menu({handleAddItemToCart, cart}){
                          <Typography className={styles.menuHeader} variant='h1'>Sis. Dina&apos;s Kitchen</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent:'center' }}>
-                         <Typography className={styles.call} variant='h6'>Call: ( 973 ) 123 - 4567</Typography>
+                         <Typography className={styles.call} variant='h6'>Call Today... ( 973 ) 123 - 4567</Typography>
                     </Box>
-                        <Section
+                    <div className={styles.page}>
+                         <Section
                             title="Weekly Special"
                             items={items.weekly}
                             handleExpandDescription={handleExpandDescription}
@@ -84,6 +81,8 @@ export default function Menu({handleAddItemToCart, cart}){
                             handleAddItemToCart={handleAddItemToCart}
                         /> 
                     </div>
+                       
+                    </div>
                 </>
             }
            
@@ -97,100 +96,100 @@ export default function Menu({handleAddItemToCart, cart}){
 const fakeItems =  [
     {
         group: 'weekly',
-        name: 'hot dog',
+        name: 'Item Name Here',
         image: 'https://firebasestorage.googleapis.com/v0/b/order-up-7e776.appspot.com/o/burgers.jpg?alt=media&token=f4989728-593b-4508-802c-d1b962bd5eb9',
-        price: 4.30,
-        description: 'This delicious hot dog will make you want to buy more and more.',
+        price: 9,
+        description: 'This delicious menu item description  will make you want to buy it',
         itemId: 'AJCBPPABLAHSJ',
         expanded: false
     },
     {
         group: 'weekly',
-        name: 'hot dog',
+        name: 'Item Name Here',
         image: 'https://firebasestorage.googleapis.com/v0/b/order-up-7e776.appspot.com/o/burgers.jpg?alt=media&token=f4989728-593b-4508-802c-d1b962bd5eb9',
-        price: 0.30,
-        description: 'lorem ipsem lorem ipsum',
+        price: 9,
+        description: 'This delicious menu item description  will make you want to buy it',
         itemId: '',
         expanded: false
     },
     {
         group: 'weekly',
-        name: 'hot dog',
+        name: 'Item Name Here',
         image: 'https://firebasestorage.googleapis.com/v0/b/order-up-7e776.appspot.com/o/burgers.jpg?alt=media&token=f4989728-593b-4508-802c-d1b962bd5eb9',
-        price: 0.30,
-        description: 'lorem ipsem lorem ipsum',
+        price: 9,
+        description: 'This delicious menu item description  will make you want to buy it',
         itemId: '',
         expanded: false
     },
     {
         group: 'latin',
-        name: 'hot dog',
+        name: 'Item Name Here',
         image: 'https://firebasestorage.googleapis.com/v0/b/order-up-7e776.appspot.com/o/burgers.jpg?alt=media&token=f4989728-593b-4508-802c-d1b962bd5eb9',
-        price: 0.30,
-        description: 'lorem ipsem lorem ipsum',
+        price: 9,
+        description: 'This delicious menu item description  will make you want to buy it',
         itemId: '',
         expanded: false
     },
     {
         group: 'latin',
-        name: 'hot dog',
+        name: 'Item Name Here',
         image: 'https://firebasestorage.googleapis.com/v0/b/order-up-7e776.appspot.com/o/burgers.jpg?alt=media&token=f4989728-593b-4508-802c-d1b962bd5eb9',
-        price: 0.30,
-        description: 'lorem ipsem lorem ipsum',
+        price: 9,
+        description: 'This delicious menu item description  will make you want to buy it',
         itemId: '',
         expanded: false
     },
     {
         group: 'latin',
-        name: 'hot dog',
+        name: 'Item Name Here',
         image: 'https://firebasestorage.googleapis.com/v0/b/order-up-7e776.appspot.com/o/burgers.jpg?alt=media&token=f4989728-593b-4508-802c-d1b962bd5eb9',
-        price: 0.30,
-        description: 'lorem ipsem lorem ipsum',
+        price: 9,
+        description: 'This delicious menu item description  will make you want to buy it',
         itemId: '',
         expanded: false
     },
     {
         group: 'sandwhiches',
-        name: 'hot dog',
+        name: 'Item Name Here',
         image: 'https://firebasestorage.googleapis.com/v0/b/order-up-7e776.appspot.com/o/burgers.jpg?alt=media&token=f4989728-593b-4508-802c-d1b962bd5eb9',
-        price: 0.30,
-        description: 'lorem ipsem lorem ipsum',
+        price: 9,
+        description: 'This delicious menu item description  will make you want to buy it',
         itemId: '',
         expanded: false
     },
     {
         group: 'sandwhiches',
-        name: 'hot dog',
+        name: 'Item Name Here',
         image: 'https://firebasestorage.googleapis.com/v0/b/order-up-7e776.appspot.com/o/burgers.jpg?alt=media&token=f4989728-593b-4508-802c-d1b962bd5eb9',
-        price: 0.30,
-        description: 'lorem ipsem lorem ipsum',
+        price: 9,
+        description: 'This delicious menu item description  will make you want to buy it',
         itemId: '',
         expanded: false
     },
     {
         group: 'sandwhiches',
-        name: 'hot dog',
+        name: 'Item Name Here',
         image: 'https://firebasestorage.googleapis.com/v0/b/order-up-7e776.appspot.com/o/burgers.jpg?alt=media&token=f4989728-593b-4508-802c-d1b962bd5eb9',
-        price: 0.30,
-        description: 'lorem ipsem lorem ipsum',
+        price: 9,
+        description: 'This delicious menu item description  will make you want to buy it',
         itemId: '',
         expanded: false
     },
     {
         group: 'vegan',
-        name: 'hot dog',
+        name: 'Item Name Here',
         image: 'https://firebasestorage.googleapis.com/v0/b/order-up-7e776.appspot.com/o/burgers.jpg?alt=media&token=f4989728-593b-4508-802c-d1b962bd5eb9',
-        price: 0.30,
-        description: 'lorem ipsem lorem ipsum',
+        price: 9,
+        description: 'This delicious menu item description  will make you want to buy it',
         itemId: '',
         expanded: false
     },
     {
         group: 'vegan',
-        name: 'hot dog',
+        name: 'Item Name Here',
         image: 'https://firebasestorage.googleapis.com/v0/b/order-up-7e776.appspot.com/o/burgers.jpg?alt=media&token=f4989728-593b-4508-802c-d1b962bd5eb9',
-        price: 0.30,
-        description: 'lorem ipsem lorem ipsum',
+        price: 9,
+        description: 'This delicious menu item description  will make you want to buy it',
         itemId: '',
         expanded: false
     }

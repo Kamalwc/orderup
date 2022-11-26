@@ -1,7 +1,5 @@
-import {Card,  Button, Box, CardContent, CardHeader, CardMedia, Collapse, MenuItem, Grid, Typography } from '@mui/material'
+import {Card, Box,Grid, Typography } from '@mui/material'
 import React from 'react'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import styles from '../../styles/Menu.module.css'
 
 
@@ -10,8 +8,8 @@ export default function Section(props){
 
 
 
-    return (<div style={{border: '5px solid #000', margin: '15px'}}>
-        <Box >
+    return (<div style={{margin: '15px'}}>
+        <Box className={styles.sectionHeaderdiv}>
             <Typography  className={styles.sectionHeader} textAlign="center" variant='h2'>{title}</Typography>
         </Box>
         <Grid container>
@@ -19,14 +17,14 @@ export default function Section(props){
                 items.map((item, key ) =>{
                     return(
                     <Grid key={key} item xs={12} md={4} style={{padding: '20px'}}>
-                        <Card>
+                        <Card className={styles.card} elevation={5}>
                             <Box sx={{ display: 'flex', justifyContent: 'space-between', padding: '10px' }}>
-                                <Typography  className={styles.itemName} variant='h6'>{item.name}</Typography>
-                                <Typography  style={{color: '#000'}} textAlign="center" variant='h6'>{item.price}</Typography>
+                                <Typography  className={styles.itemName} >{item.name}</Typography>
+                                <Typography  className={styles.itemName} >${`${item.price}`}</Typography>
                             </Box>
                             <Box style={{padding: '15px'}}>
                                 <Typography  className={styles.itemDescription} textAlign="center" variant='body1'>
-                                    lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum
+                                    {item.description}
                                 </Typography>
                             </Box>
                             {/* TODO uncomment when implementing cart feature */}
