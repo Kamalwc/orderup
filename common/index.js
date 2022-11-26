@@ -1,9 +1,7 @@
-import { Button, Hidden, Typography, Box } from '@mui/material'
-import Head from 'next/head'
+import { Button, Typography, Box } from '@mui/material'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
 
 // LANDING PAGE
 export default function Home() {
