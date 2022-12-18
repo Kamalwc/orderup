@@ -4,8 +4,12 @@ import Section from '../common/menu/Section';
 import Head from 'next/head';
 import styles from '../styles/Menu.module.css'
 import cloneDeep  from 'lodash/cloneDeep';
+import localFont from '@next/font/local'
+const myFont = localFont({ src: '../styles/googlefonts/playball-v16-latin-regular.woff2' })
 
 export default function Menu({handleAddItemToCart, cart}){
+
+
 
     const [items, setItems] = useState({
         weekly: fakeItems.filter(x => x.group === 'weekly'),
@@ -28,7 +32,7 @@ export default function Menu({handleAddItemToCart, cart}){
         setItems(copyItems)
     }
 
-    
+
     return(
         <div className={styles.background}>
             <Head>
@@ -50,7 +54,7 @@ export default function Menu({handleAddItemToCart, cart}){
                     
                     <div style={{margin: '0% 10%'}}> 
                     <Box sx={{ display: 'flex', justifyContent:'center' }}>
-                         <Typography className={styles.menuHeader} variant='h1'>Sis. Dina&apos;s Kitchen</Typography>
+                         <Typography style={{color: '#000', textAlign:"center"}} className={myFont.className} variant='h1'>Sis. Dina&apos;s Kitchen</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent:'center' }}>
                          <Typography className={styles.call} variant='h6'>Call Today... ( 973 ) 123 - 4567</Typography>
