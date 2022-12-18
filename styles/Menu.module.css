@@ -1,24 +1,70 @@
 .menuHeader{
     color: #000;
-    font-family: 'Playball', cursive;
+    font-family: 'Playball';
+    text-align: center;
+    width: 100%;
 }
+
+.mainGrid{
+    border-bottom: 5px solid #000;
+}
+
+.page{
+    border: 5px solid black;
+}
+
+.card{
+    background-color: ghostwhite;
+}
+
+.background{
+    background-color: cornsilk;
+}
+
 
 .call{
     color: #000;
+    padding-bottom: 15px;
+}
+
+.sectionHeaderdiv{
+    display: flex;
+    justify-content: center;
 }
 
 .sectionHeader{
     color: #000;
-    font-family: 'Playball', cursive;
+    font-family: 'Playball';
     padding: 15px;
+    font-size: 40px;
+    width: 50%;
+
+}
+
+@media (max-width: 820px){
+    .sectionHeader{
+        width: 100%;
+    }
+}
+
+@media (max-width: 280px){
+    .sectionHeader{
+        font-size: 30px;
+    }
+
+    .call{
+        font-size: 16px;
+    }
 }
 
 .itemName{
     color: #000;
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'bold-libreBaskerville';
+    font-size: larger;
 }
 
 .itemDescription{
     color: #000;
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'libreBaskerville';
 }
+
